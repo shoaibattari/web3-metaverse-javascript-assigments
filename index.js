@@ -1,13 +1,21 @@
 alert("hello shoaib memon");
 
+var names = "shoaib memon"
+
+alert(names);
+
+
 var name = "shoaib memon"
-var name2 = prompt("enter name");
-alert(name);
+// var name2 = prompt("enter name");
 
 if(name === name2)
 {
-    alert("your name match")
+    console.log("your name match")
 }
 else{
-    alert("your name not match")
+    console.log("your name not match")
 }
+let name2 = prompt("enter name");
+
+console.log(name);
+console.log(name2);
