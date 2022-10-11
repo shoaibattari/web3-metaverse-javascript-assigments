@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,12 @@
 <body>
     <h1>MilesToKilometerConverter</h1>
 <p>
-        Input Miles: <input type="text" id="miles_user" name="miles">
-    <button onclick="mileTokms()">convert</button>
+        Input Miles: <input type="text" id="miles_user" name="miles"
+        onchange="mileTokms(this.value)" oninput="mileTokms(this.value)">
+    
+        <!-- <button onclick="mileTokms()">convert</button> -->
     <br>
-    kilmeter: <input type="text" id="convert_value" name="convert_value">
+    kilmeter: <span id="convert_value" name="convert_value"></span>
 
 </p>
 
