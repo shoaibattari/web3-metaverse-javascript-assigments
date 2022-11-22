@@ -4,7 +4,7 @@
 // console.log(a+b+c);
 
 import inquirer from "inquirer";
-import chalk from "chalk"
+    import chalk from "chalk"
 
 let answers = await inquirer.prompt([
     {
