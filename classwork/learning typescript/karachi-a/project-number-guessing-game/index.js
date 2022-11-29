@@ -1,13 +1,10 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
+// import inquirer from 'inquirer';
 Object.defineProperty(exports, "__esModule", { value: true });
-const inquirer_1 = __importDefault(require("inquirer"));
-let chances = 5;
-let rdnumber = Math.round(Math.random()) * 10;
+// let chances = 5;
+let rdnumber = Math.floor(Math.random() * 11);
 console.log(rdnumber);
-function userNumber(input) {
+function match(input) {
     if (input === rdnumber) {
         console.log(`your number is ${input} match found`);
     }
@@ -15,13 +12,12 @@ function userNumber(input) {
         console.log(`your number is ${input} not match found`);
     }
 }
-userNumber(1);
-async function userinput() {
-    let user = await inquirer_1.default.prompt([
-        {
-            name: "userNumber",
-            type: "Number",
-            Message: 'Enter your guess number'
-        }
-    ]);
-}
+match(1);
+// async function userinput(){
+// let user = await inquirer.prompt([
+//     {
+// name: "userNumber",
+// type: "Number",
+// Message: 'Enter your guess number'
+//     }])
+// }
