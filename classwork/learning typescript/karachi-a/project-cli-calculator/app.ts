@@ -1,7 +1,7 @@
-import inquirer from 'inquirer';
-import Choice from 'inquirer/lib/objects/choice.js';
+    import inquirer from 'inquirer';
 
-async function calc(){
+
+async function calc (){
 let question = await inquirer.prompt(
     [
         {
