@@ -41,6 +41,23 @@ async function calc() {
         default:
             break;
     }
+    restart();
 }
 ;
 calc();
+async function restart() {
+    let req = await inquirer.prompt([{
+            name: 'user',
+            type: 'list',
+            message: "you are want use calculator",
+            choices: [
+                'Yes',
+                'No'
+            ]
+        }]);
+    let user_req = req.user;
+    if (user_req === 'Yes') {
+        console.clear();
+        calc();
+    }
+}
