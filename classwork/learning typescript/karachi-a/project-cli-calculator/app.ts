@@ -1,5 +1,6 @@
 import inquirer from 'inquirer';
 
+
 async function calc() {
     let question = await inquirer.prompt(
         [
@@ -17,10 +18,10 @@ async function calc() {
                 type: "list",
                 message: "choose your actions",
                 choices: [
-                    '+',
-                    '-',
-                    '*',
-                    '/'
+                    'addition +',
+                    'subtraction -',
+                    'multiplication *',
+                    'division /'
                 ]
             }
 
@@ -31,16 +32,16 @@ async function calc() {
     let operator = question.option;
 
     switch (operator) {
-        case '+':
+        case 'addition +':
             console.log(`your answer is ${num1} + ${num2} = ${num1 + num2}`);
             break;
-        case '-':
+        case 'subtraction -':
             console.log(`your answer is ${num1} - ${num2} = ${num1 - num2}`);
             break;
-        case '*':
+        case 'multiplication *':
             console.log(`your answer is ${num1} * ${num2} = ${num1 * num2}`);
             break;
-        case '/':
+        case 'division /':
             console.log(`your answer is ${num1} / ${num2} = ${num1 / num2}`);
             break;
         default:
