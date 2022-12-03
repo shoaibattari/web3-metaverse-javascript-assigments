@@ -1,4 +1,15 @@
+console.clear()
+
+
 import inquirer from 'inquirer';
+import chalk from 'chalk';
+
+
+
+
+
+console.log(chalk.green('wellcome to SS calcultor'));
+console.log(chalk.greenBright('created by SHOAIB MEMON'));
 
 
 async function calc() {
@@ -13,7 +24,7 @@ async function calc() {
                 name: 'number2',
                 type: 'number',
                 message: 'enter second number'
-            }, {
+            },{
                 name: "option",
                 type: "list",
                 message: "choose your actions",
@@ -23,7 +34,7 @@ async function calc() {
                     'multiplication *',
                     'division /'
                 ]
-            }
+            }, 
 
         ]);
 
@@ -50,7 +61,6 @@ async function calc() {
 
     restart()
 };
-calc()
 
 async function restart(){
 let req = await inquirer.prompt([{
@@ -69,5 +79,10 @@ let user_req = req.user;
 if(user_req === 'Yes'){
 console.clear()
     calc()}
+else if(user_req === 'No'){
+  console.log(chalk.green('thankyou for use calculator'));
 
-}
+}};
+
+calc()
+
