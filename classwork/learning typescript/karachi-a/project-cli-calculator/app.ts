@@ -1,12 +1,11 @@
+#!/usr/bin/env node
+
+
 console.clear()
 
 
 import inquirer from 'inquirer';
 import chalk from 'chalk';
-
-
-
-
 
 console.log(chalk.green('wellcome to SS calcultor'));
 console.log(chalk.greenBright('created by SHOAIB MEMON'));
@@ -18,12 +17,12 @@ async function calc() {
             {
                 name: 'number1',
                 type: 'number',
-                message: 'enter first number'
+                message: 'enter first number :'
             },
             {
                 name: 'number2',
                 type: 'number',
-                message: 'enter second number'
+                message: 'enter second number :'
             },{
                 name: "option",
                 type: "list",
@@ -44,16 +43,16 @@ async function calc() {
 
     switch (operator) {
         case 'addition +':
-            console.log(`your answer is ${num1} + ${num2} = ${num1 + num2}`);
+            console.log(chalk.green(`your answer is ${num1} + ${num2} = ${num1 + num2}`));
             break;
         case 'subtraction -':
-            console.log(`your answer is ${num1} - ${num2} = ${num1 - num2}`);
+            console.log(chalk.green(`your answer is ${num1} - ${num2} = ${num1 - num2}`));
             break;
         case 'multiplication *':
-            console.log(`your answer is ${num1} * ${num2} = ${num1 * num2}`);
+            console.log(chalk.green(`your answer is ${num1} * ${num2} = ${num1 * num2}`));
             break;
         case 'division /':
-            console.log(`your answer is ${num1} / ${num2} = ${num1 / num2}`);
+            console.log(chalk.green(`your answer is ${num1} / ${num2} = ${num1 / num2}`));
             break;
         default:
             break;
