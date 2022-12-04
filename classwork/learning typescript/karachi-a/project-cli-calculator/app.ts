@@ -1,5 +1,4 @@
-#!/usr/bin/env node
-
+// cd /path/to/package
 
 console.clear()
 
