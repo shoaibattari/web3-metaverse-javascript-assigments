@@ -1,4 +1,4 @@
-// cd /path/to/package
+#!/usr/bin/env node
 console.clear();
 import inquirer from 'inquirer';
 import chalk from 'chalk';
