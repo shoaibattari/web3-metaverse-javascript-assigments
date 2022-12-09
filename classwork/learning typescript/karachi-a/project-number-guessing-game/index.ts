@@ -5,16 +5,17 @@ import chalk from 'chalk';
 import chalkAnimation from 'chalk-animation'
 
 
-const sleep = (ms = 2000) => new Promise((res, rej) => setTimeout(res, ms));
 
-async function wellcome() {
-    const rainbowTitle = chalkAnimation.rainbow('wellcome to SS number guessing game');
-    await sleep()
-    rainbowTitle.stop()
-}
+// const sleep = () => new Promise((res, rej) => setTimeout(res, 2000));
+
+// async function wellcome() {
+//    const rainbowTitle = chalkAnimation.rainbow('wellcome to SS number guessing game');
+//     await sleep()
+//     rainbowTitle.stop()
+// }
 
 
-wellcome();
+// wellcome();
 
 
 async function AskQuestion() {
@@ -48,5 +49,6 @@ async function AskQuestion() {
 };
 
 
-
 AskQuestion();
+
+
