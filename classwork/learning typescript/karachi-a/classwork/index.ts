@@ -33,6 +33,7 @@
 // zia = 'khan' // error
 
 
+
 // let yname = Math.random() > 0.7 ? 'shoaib' : undefined;
 
 // if(yname){
@@ -46,6 +47,18 @@
 // type RowData = boolean | number | string | null | undefined;
 
 // let data: RowData;
+
+
+
+
+let p = {
+    name: 'abc',
+    income:30000
+}
+
+// let d:{name: string} = p
+
+// let d:{name: string, insome: number, age:number} = p
 
 
 
