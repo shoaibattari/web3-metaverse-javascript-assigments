@@ -1,10 +1,22 @@
 #! /usr/bin/env node
 import inquirer from 'inquirer';
 import chalk from 'chalk';
+import chalkAnimation from 'chalk-animation';
 console.clear();
-console.log(chalk.blue("WELLCOME TO NUMBER GUESSING GAME"));
+async function wc() {
+    const rainbow = chalkAnimation.rainbow(`
+            .........WELLCOME TO SHOAIB NUMBER GUESSING GAME.........`); // Animation starts
+    setTimeout(() => {
+        rainbow.stop(); // Animation stops
+    }, 1000);
+    rainbow.start(); // Animation resumes;
+}
+wc();
+// console.log(
+//     chalk.blue("WELLCOME TO NUMBER GUESSING GAME"));
 let playerLife = 3;
 async function AskQuestion() {
+    console.log(chalk.redBright(`player life is ${playerLife}`));
     do {
         playerLife--;
         var rdnumber = Math.floor(Math.random() * 10 + 1);
@@ -25,11 +37,13 @@ async function AskQuestion() {
             console.log(chalk.green(`
             "CONGRATULATION "YOU ARE WIN"
                         YOU GUESS THE RIGHT NUMBER`));
+            console.log(chalk.redBright(`player life is ${playerLife}`));
         }
         else if (usernumber.user < rdnumber) {
             console.log(chalk.red(`
                 "sorry best of luck"
                 your number is ${usernumber.user} is less than guess number`));
+            console.log(chalk.redBright(`player life is ${playerLife}`));
         }
         else if (usernumber.user > rdnumber) {
             console.log(chalk.red(`
