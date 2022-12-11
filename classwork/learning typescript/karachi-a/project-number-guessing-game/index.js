@@ -21,6 +21,7 @@ async function AskQuestion() {
                 }
             }]);
         if (usernumber.user === rdnumber) {
+            console.clear();
             console.log(chalk.green(`
             "CONGRATULATION "YOU ARE WIN"
                         YOU GUESS THE RIGHT NUMBER`));
@@ -42,5 +43,27 @@ async function AskQuestion() {
                 .........GAME OVER.......`));
     }
     ;
+    restart();
+    playerLife = 3;
 }
 AskQuestion();
+async function restart() {
+    let req = await inquirer.prompt([{
+            name: 'user',
+            type: 'list',
+            message: "do you want to restart game????",
+            choices: [
+                'Yes',
+                'No'
+            ]
+        }]);
+    let user_req = req.user;
+    if (user_req === 'Yes') {
+        console.clear();
+        AskQuestion();
+    }
+    else if (user_req === 'No') {
+        console.log(chalk.green('thankyou for play this game'));
+    }
+}
+;
