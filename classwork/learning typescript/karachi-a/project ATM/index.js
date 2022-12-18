@@ -15,7 +15,7 @@ const acQuestion = await inquirer.prompt([
         message: "please enter your PIN"
     },
 ]);
-const balance = Math.floor(Math.random() * 100000);
+let balance = Math.floor(Math.random() * 100000);
 async function ATM() {
     const question = await inquirer.prompt([
         {
@@ -64,13 +64,13 @@ async function ATM() {
         if (balance >= cashAmont) {
             console.log(`opening balance :   ${balance}`);
             console.log("cash transaction is succesful");
-            console.log(`your current balance is ${balance - cashAmont}`);
+            console.log(`your current balance is ${balance -= cashAmont}`);
             restartAtm();
         }
         else if (balance >= BillAmount) {
             console.log(`opening balance :   ${balance}`);
             console.log("your bill are paid");
-            console.log(`your current balance is ${balance - BillAmount}`);
+            console.log(`your current balance is ${balance -= BillAmount}`);
             restartAtm();
         }
         else
@@ -94,7 +94,7 @@ async function restartAtm() {
         ATM();
     }
     else if (user_req === 'No') {
-        console.log('thankyou for use ATM');
+        console.log(chalk.greenBright('thankyou for use ATM'));
     }
 }
 ;

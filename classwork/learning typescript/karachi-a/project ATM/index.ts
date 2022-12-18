@@ -16,7 +16,7 @@ interface anstype {
 
 console.clear()
 
-console.log(chalk.greenBright('   ........wellcome to SHOAIB-ATM........   '))
+console.log(chalk.greenBright('   ........WELLCOME TO SHOAIB-ATM........   '))
 
 
 
@@ -33,7 +33,7 @@ console.log(chalk.greenBright('   ........wellcome to SHOAIB-ATM........   '))
             message: "please enter your PIN"
         },
     ]);
-    const balance = Math.floor(Math.random() * 100000); 
+    let balance = Math.floor(Math.random() * 100000); 
   
   
     async function ATM() {
@@ -87,13 +87,13 @@ console.log(chalk.greenBright('   ........wellcome to SHOAIB-ATM........   '))
         if (balance >= cashAmont) {
             console.log(`opening balance :   ${balance}`);
             console.log("cash transaction is succesful");
-            console.log(`your current balance is ${balance - cashAmont}`);
+            console.log(`your current balance is ${balance -= cashAmont}`);
             restartAtm()
         }
         else if (balance >= BillAmount) {
             console.log(`opening balance :   ${balance}`);
             console.log("your bill are paid");
-            console.log(`your current balance is ${balance - BillAmount}`);
+            console.log(`your current balance is ${balance -= BillAmount}`);
             restartAtm()
         } else (
             console.log(chalk.red('......insuficient balance.......'))
@@ -123,7 +123,7 @@ async function restartAtm() {
         ATM()
     }
     else if (user_req === 'No') {
-        console.log('thankyou for use ATM');
+        console.log(chalk.greenBright('        .......THANKS FOR USE ATM........      '));
 
     }
 };
