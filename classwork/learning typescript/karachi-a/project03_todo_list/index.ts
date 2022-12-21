@@ -50,7 +50,7 @@ async function allTasks() {
     if (TASKS.length > 0){
         console.log(chalk.green("YOUR ALL TASKS"));
         TASKS.map((todo) => {
-            console.log(chalk.blueBright( `Task  ${todo}`));
+            console.log(chalk.blueBright( `Task# ${TASKS.indexOf(todo)+1}:  ${todo}`));
         })
     } else {
         console.log(chalk.redBright("NO TASKS FOUND"));
