@@ -1,4 +1,5 @@
 import inquirer from "inquirer";
+console.clear();
 let Todos = [];
 let loop = true;
 while (loop) {
@@ -16,7 +17,7 @@ while (loop) {
         }
     ]);
     const { addmore, TODO } = userTodo;
-    console.log(userTodo);
+    // console.log(userTodo);
     loop = addmore;
     if (TODO) {
         Todos.push(TODO);
@@ -25,7 +26,8 @@ while (loop) {
         console.log("kindly add valid input");
     }
 }
-console.log(Todos);
+// console.log(Todos);
+console.clear();
 if (Todos.length > 0) {
     console.log("your TODOS is ");
     Todos.forEach(todo => {

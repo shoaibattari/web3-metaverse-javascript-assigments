@@ -1,11 +1,7 @@
 import inquirer from "inquirer";
 
 
-
-
-
-
-
+console.clear()
 
 
 let Todos : string[] = [];
@@ -28,7 +24,7 @@ const userTodo: {
 ]) 
 
 const {addmore, TODO} = userTodo;
-console.log(userTodo);
+// console.log(userTodo);
 
 loop = addmore;
 if(TODO){
@@ -38,7 +34,8 @@ Todos.push(TODO)
     
 }}
 
-console.log(Todos);
+// console.log(Todos);
+console.clear()
 
 if(Todos.length > 0){
     console.log("your TODOS is ");
