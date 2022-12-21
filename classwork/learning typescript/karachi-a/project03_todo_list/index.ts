@@ -1,49 +1,60 @@
 import inquirer from "inquirer";
-
-
+import chalk from "chalk"
 console.clear()
 
-let Todos: string[] = [];
 
 
+console.log(chalk.greenBright("Todo App create by 'SHOAIB MEMON' "));
 
-let loop: boolean = true;
-while (loop) {
-    const userTodo: {
-        TODO: string,
-        addmore: boolean
-    } = await inquirer.prompt([
+
+let TASKS: string[] = []
+
+async function App() {
+    const Todos: { App: string } = await inquirer.prompt([
         {
-            type: "input",
-            name: "TODO",
-            message: "please add TODO name "
-        },
-        {
-            type: "confirm",
-            name: "addmore",
-            message: "do you want more add TODO ",
-            default: false
+
+            name: "App",
+            type: "list",
+            message: "Please select your operation",
+            choices: [
+                "AddTasks", "AllTasks", "exit",]
         }
-    ])
-
-    const { addmore, TODO } = userTodo;
-
-    loop = addmore;
-    if (TODO) {
-        Todos.push(TODO)
-    } else {
-        console.log("kindly add valid input");
-
+    ]);
+    if (Todos.App === "AddTasks") {
+        addTasks()
+    } else if (Todos.App === "AllTasks") {
+        console.clear()
+        allTasks()
+    }else if(Todos.App === "exit"){
+        console.log(chalk.yellow("THANKS FOR USE TODO APP"))
     }
 }
 
 
-console.clear()
-if (Todos.length > 0) {
-    console.log("your TODOS is ");
-    Todos.forEach(todo => {
-        console.log(todo);
-    })
-} else {
-    console.log("no TODOS found");
-};
+
+async function addTasks() {
+    const Todos: { AddTask: string } = await inquirer.prompt([
+        {
+            name: "AddTask",
+            type: "input",
+            Message: "please add todo"
+        },
+    ])
+    TASKS.push(Todos.AddTask);
+    App()
+
+}
+
+async function allTasks() {
+    if (TASKS.length > 0){
+        console.log(chalk.green("YOUR ALL TASKS"));
+        TASKS.map((todo) => {
+            console.log(chalk.blueBright(todo));
+        })
+    } else {
+        console.log(chalk.redBright("NO TASKS FOUND"));
+    }
+    App()
+
+}
+App()
