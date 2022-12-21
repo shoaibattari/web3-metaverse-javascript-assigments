@@ -10,7 +10,7 @@ async function App() {
             type: "list",
             message: "Please select your operation",
             choices: [
-                "AddTasks", "AllTasks", "exit",
+                "AddTasks", "AllTasks", "deleteTask", "exit",
             ]
         }
     ]);
@@ -20,6 +20,9 @@ async function App() {
     else if (Todos.App === "AllTasks") {
         console.clear();
         allTasks();
+    }
+    else if (Todos.App === "deleteTask") {
+        deleteTask();
     }
     else if (Todos.App === "exit") {
         console.log(chalk.yellow("THANKS FOR USE TODO APP"));
@@ -42,6 +45,23 @@ async function allTasks() {
         TASKS.map((todo) => {
             console.log(chalk.blueBright(`Task# ${TASKS.indexOf(todo) + 1}:  ${todo}`));
         });
+    }
+    else {
+        console.log(chalk.redBright("NO TASKS FOUND"));
+    }
+    App();
+}
+async function deleteTask() {
+    const delTodos = await inquirer.prompt([
+        {
+            name: "deleteTask",
+            type: "input",
+            Message: "please add Task number for delete"
+        },
+    ]);
+    let indNumber = delTodos.deleteTask;
+    if (TASKS.length > 0) {
+        TASKS.splice(indNumber - 1, 1);
     }
     else {
         console.log(chalk.redBright("NO TASKS FOUND"));
