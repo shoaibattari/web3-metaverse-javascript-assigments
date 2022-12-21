@@ -1,9 +1,10 @@
 {
-  "name": "project-atm",
+  "name": "shoaib-cli-atm",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
+  "bin": "index.js",
   "scripts": {
     "start": "tsc && node index.js"
   },
