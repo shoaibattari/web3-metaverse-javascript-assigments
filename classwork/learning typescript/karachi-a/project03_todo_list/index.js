@@ -40,7 +40,7 @@ async function allTasks() {
     if (TASKS.length > 0) {
         console.log(chalk.green("YOUR ALL TASKS"));
         TASKS.map((todo) => {
-            console.log(chalk.blueBright(todo));
+            console.log(chalk.blueBright(`Task  ${todo}`));
         });
     }
     else {

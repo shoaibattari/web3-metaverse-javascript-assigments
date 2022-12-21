@@ -9,6 +9,7 @@ console.log(chalk.greenBright("Todo App create by 'SHOAIB MEMON' "));
 
 let TASKS: string[] = []
 
+
 async function App() {
     const Todos: { App: string } = await inquirer.prompt([
         {
@@ -49,7 +50,7 @@ async function allTasks() {
     if (TASKS.length > 0){
         console.log(chalk.green("YOUR ALL TASKS"));
         TASKS.map((todo) => {
-            console.log(chalk.blueBright(todo));
+            console.log(chalk.blueBright( `Task  ${todo}`));
         })
     } else {
         console.log(chalk.redBright("NO TASKS FOUND"));
