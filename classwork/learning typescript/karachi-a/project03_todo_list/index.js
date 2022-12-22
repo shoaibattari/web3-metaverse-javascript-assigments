@@ -1,8 +1,10 @@
+#!/usr/bin/env node
 import inquirer from "inquirer";
 import chalk from "chalk";
 console.clear();
 console.log(chalk.greenBright("Todo App create by 'SHOAIB MEMON' "));
 let TASKS = [];
+// create function for main app section
 async function App() {
     const Todos = await inquirer.prompt([
         {
@@ -10,7 +12,7 @@ async function App() {
             type: "list",
             message: "Please select your operation",
             choices: [
-                "AddTasks", "AllTasks", "deleteTask", "exit",
+                "AddTasks", "AllTasks", "deleteTask", "editTask", "allTasksdelete", "exit",
             ]
         }
     ]);
@@ -24,10 +26,24 @@ async function App() {
     else if (Todos.App === "deleteTask") {
         deleteTask();
     }
+    else if (Todos.App === "editTask") {
+        editTask();
+    }
+    else if (Todos.App === "allTasksdelete") {
+        if (TASKS.length > 0) {
+            TASKS = [];
+            console.log("YOUR ALL TASKS DELETED");
+            App();
+        }
+        else {
+            console.log(chalk.redBright("NO TASKS FOUND"));
+        }
+    }
     else if (Todos.App === "exit") {
         console.log(chalk.yellow("THANKS FOR USE TODO APP"));
     }
 }
+// create function for add tasks
 async function addTasks() {
     const Todos = await inquirer.prompt([
         {
@@ -39,11 +55,13 @@ async function addTasks() {
     TASKS.push(Todos.AddTask);
     App();
 }
+// create function for show all tasks
 async function allTasks() {
     if (TASKS.length > 0) {
         console.log(chalk.green("YOUR ALL TASKS"));
         TASKS.map((todo) => {
-            console.log(chalk.blueBright(`Task# ${TASKS.indexOf(todo) + 1}:  ${todo}`));
+            let tasksindex = TASKS.indexOf(todo) + 1;
+            console.log(`Task#${tasksindex}:  ${todo}`);
         });
     }
     else {
@@ -51,6 +69,7 @@ async function allTasks() {
     }
     App();
 }
+// create function for delete some tasks
 async function deleteTask() {
     const delTodos = await inquirer.prompt([
         {
@@ -62,6 +81,29 @@ async function deleteTask() {
     let indNumber = delTodos.deleteTask;
     if (TASKS.length > 0) {
         TASKS.splice(indNumber - 1, 1);
+    }
+    else {
+        console.log(chalk.redBright("NO TASKS FOUND"));
+    }
+    App();
+}
+// create function for edit tasks
+async function editTask() {
+    const editTodos = await inquirer.prompt([
+        {
+            name: "editTask",
+            type: "input",
+            Message: "please add Task number for edit"
+        }, {
+            name: "NewTaskName",
+            type: "input",
+            message: "please type edited Your new Task "
+        }
+    ]);
+    let indNumber = editTodos.editTask;
+    let indName = editTodos.NewTaskName;
+    if (TASKS.length > 0) {
+        TASKS.splice(indNumber - 1, 1, indName);
     }
     else {
         console.log(chalk.redBright("NO TASKS FOUND"));
