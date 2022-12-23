@@ -1,7 +1,7 @@
 import inquirer from "inquirer";
 import chalk from 'chalk';
 
-const userDataInput: {userdata: string} = await inquirer.prompt([
+const userDataInput: { userdata: string } = await inquirer.prompt([
     {
         name: "userdata",
         type: "input",
@@ -13,13 +13,21 @@ let userData: string = userDataInput.userdata;
 
 console.log("userdata: " + userData);
 
-// // words count
-let wordsCounter = userData.trim().split(" ");
-let dataClean = wordsCounter.filter(function(elm){
-    return elm !== ""
-})
-console.log(chalk.blueBright(`Total words Is:  ${dataClean.length}`));
+// //function create words count
 
+function wordsCounter() {
+    let wordsCounter = userData.trim().split(" ");
+    let dataClean = wordsCounter.filter(function (element) {
+        return element !== ""
+    })
+    console.log(chalk.blueBright(`Total words Is:  ${dataClean.length}`));
+}
+wordsCounter()
 
 // character counting
-// console.log(characterCounter);
+function characterCounter(){
+    
+let characterCounter = userData.trim();
+    console.log(chalk.blueBright(`Total Character Is: ${characterCounter.length}`));
+}
+characterCounter()
