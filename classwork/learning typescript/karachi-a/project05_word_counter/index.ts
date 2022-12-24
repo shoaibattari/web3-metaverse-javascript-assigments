@@ -13,7 +13,7 @@ async function App() {
         {
             name: "userdata",
             type: "input",
-            message: "enter your text"
+            message: "enter your text: "
         }
     ])
 
@@ -28,7 +28,7 @@ async function App() {
         let wordsCounter = userData.split(" ").filter(function (element) {
             return element !== ""
         })
-        console.log(chalk.blueBright(`Total words Is:  ${wordsCounter.length}`));
+        console.log(chalk.magentaBright(`Total words Is:  ${wordsCounter.length}`));
     }
     wordsCounter()
 
@@ -41,7 +41,7 @@ async function App() {
                 newString = newString + userData[i]
             } i++
         }
-        console.log(chalk.blueBright(`Total Character Is: ${newString.length}`));
+        console.log(chalk.magentaBright(`Total Character Is: ${newString.length}`));
     }
     characterCounter()
     Restart()
