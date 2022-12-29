@@ -1,6 +1,6 @@
 {
-  "name": "shoaib_currency_converter",
-  "version": "1.0.0",
+  "name": "shoaib_currency_converter_app",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "type": "module",
