@@ -1,21 +1,19 @@
 {
-  "name": "shoaib_currency_converter_app",
-  "version": "1.2.0",
-  "description": "",
+  "name": "project06_student_management_system",
+  "version": "1.0.0",
   "main": "index.js",
   "type": "module",
-  "bin": "index.js",
+  "bin": {
+    "project06_student_management_system": "index.js"
+  },
   "scripts": {
     "start": "tsc && node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
-    "chalk": "^5.2.0",
     "inquirer": "^9.1.4"
-  },
-  "devDependencies": {
-    "@types/inquirer": "^9.0.3"
   }
 }

@@ -5,7 +5,7 @@ import inquirer from "inquirer"
 import chalk from 'chalk'
 console.clear()
 
-console.log(chalk.greenBright("------------WELLLCOME TO SHOAIB CURRENCY EXCHANGE------------"));
+console.log(chalk.greenBright("------------WELLCOME TO SHOAIB CURRENCY EXCHANGE------------"));
 
 console.log(chalk.green(
     `
