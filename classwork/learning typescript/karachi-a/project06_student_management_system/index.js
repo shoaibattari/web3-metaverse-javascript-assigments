@@ -1,4 +1,6 @@
+#!/usr/bin/env node
 console.clear();
+// create class person
 class Person {
     name;
     age;
@@ -10,6 +12,7 @@ class Person {
         return this.name;
     }
 }
+// create class student extende with person
 class Student extends Person {
     rollNumber;
     courses = [];
@@ -21,6 +24,7 @@ class Student extends Person {
         this.courses.push(course);
     }
 }
+// create class instructor extende with person
 class Instructor extends Person {
     salary;
     courses = [];
@@ -33,6 +37,7 @@ class Instructor extends Person {
         this.courses.push(course);
     }
 }
+// create class course
 class Course {
     id;
     name;
@@ -52,6 +57,16 @@ class Course {
         instructor.assignCourse(this);
     }
 }
+class Department {
+    name;
+    cources = [];
+    constructor(name) {
+        this.name = name;
+    }
+    addCourse(course) {
+        this.cources.push(course);
+    }
+}
 // student create
 const student1 = new Student("shoaib", 26, "st1");
 const student2 = new Student("sattar", 26, "st2");
@@ -61,13 +76,17 @@ const instructor2 = new Instructor("daniyal", 26, 25000);
 //courses create
 const course1 = new Course("C1", "Metaverse");
 const course2 = new Course("C2", "blockChain");
+// add student & instructor in course1
 course1.addStudent(student1);
 course1.addStudent(student2);
 course1.setInstructor(instructor1);
-// console.log(course1);
+// add student & instructor in course
 course2.addStudent(student1);
 course2.addStudent(student2);
 course2.setInstructor(instructor2);
-// console.log(course2);
-console.log(course1.instructor);
+const department1 = new Department("computer science");
+department1.addCourse(course1);
+department1.addCourse(course2);
+// console.log(department1);
+console.log(course1);
 export {};

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 console.clear()
 
 // create class person
@@ -32,7 +33,7 @@ class Student extends Person {
 // create class instructor extende with person
 
 class Instructor extends Person {
-    salary: number;
+ private   salary: number;
     courses: Course[] = [];
 
 
@@ -72,6 +73,18 @@ class Course {
 }
 
 
+class Department {
+    name: string;
+    cources: Course[] = [];
+
+
+    constructor(name: string,) {
+        this.name = name;
+    }
+    addCourse(course: Course) {
+        this.cources.push(course)
+    }
+}
 
 
 // student create
@@ -94,8 +107,15 @@ course1.addStudent(student2)
 course1.setInstructor(instructor1)
 
 
-// add student & instructor in course2
+// add student & instructor in course
 course2.addStudent(student1);
 course2.addStudent(student2);
 course2.setInstructor(instructor2)
+
+
+const department1 = new Department("computer science");
+department1.addCourse(course1);
+department1.addCourse(course2);
+
+
 
