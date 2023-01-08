@@ -117,5 +117,7 @@ const department1 = new Department("computer science");
 department1.addCourse(course1);
 department1.addCourse(course2);
 
+console.log("student 1 data:");
+console.log(student1);
 
 

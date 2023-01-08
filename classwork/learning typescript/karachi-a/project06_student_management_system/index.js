@@ -87,6 +87,18 @@ course2.setInstructor(instructor2);
 const department1 = new Department("computer science");
 department1.addCourse(course1);
 department1.addCourse(course2);
-// console.log(department1);
-console.log(course1);
+console.log("student 1 data:");
+console.log(student1);
 export {};
+// console.log(`   
+// instructor 1 data:
+// ${instructor1}`);
+// console.log(`   
+// instructor 2 data:
+// ${instructor2}`);
+// console.log(`   
+// course 1 data:
+// ${course1}`);
+// console.log(`   
+// course 2 data:
+// ${course2}`);
