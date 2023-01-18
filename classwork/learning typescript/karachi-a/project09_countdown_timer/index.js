@@ -18,14 +18,8 @@ await welcome();
 async function App() {
     let req = await inquirer.prompt([{
             name: 'user',
-            type: 'list',
-            message: "PLEAST SELECT TIMER",
-            choices: [
-                '15',
-                '30',
-                "45",
-                '60'
-            ]
+            type: 'number',
+            message: "PLEAST SELECT TIMER IN SECONDS",
         }]);
     let seconds = req.user;
     const makeIteration = () => {
