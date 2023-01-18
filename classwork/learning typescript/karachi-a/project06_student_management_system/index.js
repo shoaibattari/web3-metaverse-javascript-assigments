@@ -90,15 +90,3 @@ department1.addCourse(course2);
 console.log("student 1 data:");
 console.log(student1);
 export {};
-// console.log(`   
-// instructor 1 data:
-// ${instructor1}`);
-// console.log(`   
-// instructor 2 data:
-// ${instructor2}`);
-// console.log(`   
-// course 1 data:
-// ${course1}`);
-// console.log(`   
-// course 2 data:
-// ${course2}`);
