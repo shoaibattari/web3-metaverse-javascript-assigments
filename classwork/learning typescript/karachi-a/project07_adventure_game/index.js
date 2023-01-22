@@ -22,7 +22,6 @@ async function AskQuestion() {
         let colour = ["red", "blue", "green", "yellow", "orange"];
         var rdnumber = Math.floor(Math.random() * 5 + 1);
         var rdcolour = (colour[rdnumber]);
-        console.log(rdcolour);
         console.log(chalk.greenBright(`your score is ${playerscore}`));
         var usernumber = await inquirer.prompt([{
                 name: 'user',
