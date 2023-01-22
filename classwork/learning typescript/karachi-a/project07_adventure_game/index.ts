@@ -35,7 +35,6 @@ async function AskQuestion() {
         let colour: string[] = ["red", "blue", "green", "yellow", "orange"]
         var rdnumber: number = Math.floor(Math.random() * 5 + 1)
         var rdcolour: string = (colour[rdnumber]);
-        // console.log(rdcolour);
         console.log(chalk.greenBright(`your score is ${playerscore}`));
 
 
