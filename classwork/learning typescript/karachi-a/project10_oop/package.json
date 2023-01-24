@@ -1,0 +1,19 @@
+{
+  "name": "shoaib-oop-practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "bin": "index.js",
+  "scripts": {
+    "start": " tsc && node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "g": "^2.0.1",
+    "typescript": "^4.9.4"
+  },
+  "devDependencies": {},
+  "description": ""
+}
